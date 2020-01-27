@@ -8,7 +8,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "seed-db": "mysql -u root -p curryshot && use menu && source ./schema.sql"
+    "seed-db": "mysql -u root -p && use menu && source ./schema.sql"
   },
   "dependencies": {
     "mysql": "^2.18.1"
