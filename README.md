@@ -4,10 +4,9 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/10-free-table/calendar
+  - https://github.com/10-free-table/reviews
+  - https://github.com/10-free-table/Overview
 
 ## Table of Contents
 
