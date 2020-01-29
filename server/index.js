@@ -1,21 +1,22 @@
 const express = require('express');
-const db = require('../database/index.js');
+const bodyParser = require('body-parser');
 
-const server = express();
+const db = require('../database');
+
+const app = express();
 const PORT = 3000;
 
-server.get('/menu/:page_id', (req, res) => {
-    db.getMenuWithPageId(req.params.page_id, (err, results) => {
-        if (err) {
-            console.log('error from db query for menu', err);
-            res.send(err);
-        } else {
-            console.log(`db query returned ${results.length} results`);
-            res.send(results);
-        }
-    });
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(express.static(__dirname + '/../client/dist'));
+
+app.get('/api/menu/:pageId', (req, res) => {
+  db.getMenuWithPageId(req.params.pageId, (data) => {
+    res.send(data);
+  });
 });
 
-server.listen(PORT, () => {
-    console.log(`server listening on ${PORT}`);
+app.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`);
 });
