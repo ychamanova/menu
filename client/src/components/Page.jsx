@@ -1,13 +1,28 @@
 import React from 'react';
+import Section from './Section.jsx';
 
 class Page extends React.Component {
 
   render() {
-    console.log(this.props.data);
 
-    return (<div>{}</div>);
+    var elements = [];
+
+    for (var section in this.props.data) {
+      elements.push(
+        <div key={section}>
+          <hr />
+          <h4>{section}</h4>
+          <Section data={this.props.data[section]}/>
+        </div>
+      );
+    }
+
+    return (
+      <div>
+        {elements}
+      </div>
+    );
   }
-
 }
 
 

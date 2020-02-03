@@ -4,13 +4,15 @@ import $ from 'jquery';
 
 import Categories from './components/Categories.jsx';
 import Page from './components/Page.jsx';
+import Specials from './components/Specials.jsx';
 import data from './sample_data.js';
 
 class Menu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: data
+      data: data,
+      currentPage: Object.keys(data.Categories)[0]
     };
   }
 
@@ -19,15 +21,15 @@ class Menu extends React.Component {
 
     $.get( "/api/menu/" + pagenum, function( dat ) {
       this.setState({
-        data: dat
+        data: dat,
+        currentPage: Object.keys(dat.Categories)[0]
       });
     }.bind(this));
   }
 
   changeCategory(str) {
     this.setState({
-      onPhrase: (this.state.onPhrase + 1) % this.state.data.length,
-      translate: false
+      currentPage: str
     });
   }
 
@@ -40,10 +42,21 @@ class Menu extends React.Component {
 
     return (
       <div>
-        <Categories categories={categories} clickHandler={this.changeCategory.bind(this)}/>
+        
 
-        <div className="selection">
-          <Page data={this.state.data}/>
+        <div className="selections">
+          <h3> Menu </h3>
+          <hr />
+          <Categories categories={categories} clickHandler={this.changeCategory.bind(this)}/>
+
+          <Page data={this.state.data.Categories[this.state.currentPage]}/>
+          <hr />
+        </div>
+
+        <br /> <br /> <br />
+
+        <div className="specials">
+          <Specials blurb={this.state.data.Specials.Blurb}/>
         </div>
       </div>
     );
