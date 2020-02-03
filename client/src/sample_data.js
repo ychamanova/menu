@@ -1,25 +1,67 @@
-const data = [
-  {
-    id: 0,
-    kor: '안녕하새요',
-    eng: 'Hello',
-    rom: 'an-nyeong-ha-se-yo',
-    status: 'Got it'
+const data = {
+  Categories: {
+    Breakfast: {
+      Eggs: {
+        ID: 1,
+        Dishes: {
+          'Blue Egg': {
+            Ingredients: 'egg, blue dye',
+            Price: 500
+          },
+          'Green Egg': {
+            Ingredients: 'egg, green dye',
+            Price: 400
+          }
+        }
+      },
+      Waffles: {
+        ID: 2,
+        Dishes: {
+          'Sweet Waffle': {
+            Ingredients: 'waffle, maple syrup',
+            Price: 3000
+          },
+          'Savory Waffle': {
+            Ingredients: 'waffle, balsamic vinegar',
+            Price: 5000
+          }
+        }
+      }
+    },
+    Lunch: {
+      Soups: {
+        ID: 3,
+        Dishes: {
+          'Stone Soup': {
+            Ingredients: 'broth, granite',
+            Price: 100
+          },
+          'Carrot Stew': {
+            Ingredients: 'broth, 3 carrots',
+            Price: 20
+          }
+        }
+      }
+    },
+    Dinner: {
+      Burgers: {
+        ID: 5,
+        Dishes: {
+          'Bleu Burger': {
+            Ingredients: 'burger, blue chese',
+            Price: 300
+          },
+          'Mushroom Burger': {
+            Ingredients: 'burger, sauteed shitake mushrooms',
+            Price: 550
+          }
+        }
+      }
+    }
   },
-  {
-    id: 1,
-    kor: '샘플 데이터입니다',
-    eng: 'This is sample data.',
-    rom: 'sam-peul de-i-ta-ib-ni-da',
-    status: 'Almost'
-  },
-  {
-    id: 2,
-    kor: '절 바꿔 주세요!',
-    eng: 'Replace me!',
-    rom: 'jeol ba-kkweo ju-se-yo',
-    status: 'Not yet'
+  Specials: {
+    blurb: 'test blurb',
   }
-];
+};
 
 export default data;
