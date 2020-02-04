@@ -47,7 +47,11 @@ class Menu extends React.Component {
         <div className="selections">
           <h3> Menu </h3>
           <hr />
-          <Categories categories={categories} clickHandler={this.changeCategory.bind(this)}/>
+          <Categories
+              categories={categories}
+              clickHandler={this.changeCategory.bind(this)}
+              current={this.state.currentPage}
+          />
 
           <Page data={this.state.data.Categories[this.state.currentPage]}/>
           <hr />
