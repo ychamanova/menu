@@ -1,6 +1,6 @@
 import React from 'react';
 import Dish from './Dish.jsx';
-import Column from './styled/Column.jsx'
+import Column from './styled/Column.jsx';
 
 var Section = (props) => {
   var { data } = props;
@@ -8,7 +8,7 @@ var Section = (props) => {
   var elementsRight = [];
 
   //two columns of dishes 
-  var half = Math.floor(Object.keys(data.Dishes).length / 2)
+  var half = Math.floor(Object.keys(data.Dishes).length / 2);
 
   var count = 0;
 
