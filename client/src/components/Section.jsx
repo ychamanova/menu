@@ -2,14 +2,15 @@ import React from 'react';
 import Dish from './Dish.jsx';
 
 var Section = (props) => {
+  var { data } = props;
   var elements = [];
 
   //TODO: two columns of dishes 
 
-  for (var dish in props.data.Dishes) {
+  for (var dish in data.Dishes) {
     elements.push(
       <div key={dish}>
-        <Dish name={dish} data={props.data.Dishes[dish]}/>
+        <Dish name={dish} data={data.Dishes[dish]}/>
       </div>
     );
   }
@@ -21,6 +22,5 @@ var Section = (props) => {
   );
 
 }
-
 
 export default Section;

@@ -4,12 +4,14 @@ import Section from './Section.jsx';
 var Page = (props) => {
   var elements = [];
 
-  for (var section in props.data) {
+  var { data } = props;
+
+  for (var section in data) {
     elements.push(
       <div key={section}>
         <hr />
         <h4>{section}</h4>
-        <Section data={props.data[section]}/>
+        <Section data={data[section]}/>
       </div>
     );
   }
