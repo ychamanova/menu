@@ -1,15 +1,19 @@
 import React from 'react';
+import Price from './styled/Price.jsx';
 
 var Dish = (props) => {
   var { name, data } = props;
 
   return (
     <div>
-      {name}
-      <br />
-      {data.Ingredients}
-      <br />
-      {'$' + (data.Price * .01).toFixed(2)}
+      <span>
+        <b> 
+          {name} 
+          <Price> {'$' + (data.Price * .01).toFixed(2)} </Price>
+        </b>
+      </span>
+      <br /> <br />
+      {data.Ingredients} 
       <br /><br />
     </div>
   );

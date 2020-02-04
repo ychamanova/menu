@@ -4,8 +4,8 @@ import styled from 'styled-components';
 const Column = styled.div`
   display: inline-block;
   vertical-align: top;
-  width: 48%;
-  padding-right: 10px;
+  width: 46%;
+  padding-right: 14px;
 `
 
 export default Column;
