@@ -1,0 +1,40 @@
+>>I expect the first menu page to render when the component loads.
+	1) when component mounts:
+		-retrieve page id from end of url
+		-ajax request db for that page's menu data
+		-set a state variable with current category string
+	3) pass page data as a prop to page component
+	4) further pass to components sections, dishes
+
+>>I expect a new menu page to render when a category is clicked.
+	1) pass click handler to category buttons
+	2) highlight current category button with styled components
+	3) pass page data as a prop to page component
+	4) further pass to components sections, dishes
+
+>>I expect the lower half of the menu to be hidden initially.
+	1) pass click handler to "show more" button
+	2) cut off bottom portion of menu with a partial-opacity gradient
+
+>>I expect the menu to expand when "view full menu" is clicked.
+	1) hide opacity gradient
+	2) expand menu on click
+
+>>I expect the menu to shrink once more when "collapse menu" is clicked.
+	1) return to initially hidden state on click
+
+>>I expect category borders to highlight when the category is clicked.
+	1) pass red color and 2px line thickness to current category button
+	2) use ternary operator to default non-selected buttons
+
+>>I expect nothing to change when the current category is clicked.
+	1) sets the current category to an identical string
+
+>>I expect food items to render in two adjacent columns.
+	1) split dishes in each section into two arrays
+	2) nest two spans inside a div adjacent to each other
+	3) insert both halves of each section respectively
+
+>>I expect specials to render beneath the menu.
+	1) pass blurb data to specials component
+	2) render component

@@ -1,4 +1,4 @@
-I expect to the first menu page to render when the component loads.
+I expect the first menu page to render when the component loads.
 
 I expect a new menu page to render when a category is clicked.
 
