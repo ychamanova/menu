@@ -11,6 +11,7 @@ const Button = styled.button`
   margin: 0.5em 0.75em;
   padding: 0.25em 1em;
   height: 40px;
+  cursor: pointer;
 `
 
 export default Button;
