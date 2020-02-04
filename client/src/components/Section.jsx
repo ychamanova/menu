@@ -1,23 +1,42 @@
 import React from 'react';
 import Dish from './Dish.jsx';
+import Column from './styled/Column.jsx';
 
 var Section = (props) => {
   var { data } = props;
-  var elements = [];
+  var elementsLeft = [];
+  var elementsRight = [];
 
-  //TODO: two columns of dishes 
+  //two columns of dishes 
+  var half = Math.floor(Object.keys(data.Dishes).length / 2);
+
+  var count = 0;
 
   for (var dish in data.Dishes) {
-    elements.push(
-      <div key={dish}>
-        <Dish name={dish} data={data.Dishes[dish]}/>
-      </div>
-    );
+    if (count <= half) {
+      elementsLeft.push(
+        <div key={dish}>
+          <Dish name={dish} data={data.Dishes[dish]}/>
+        </div>
+      );
+    } else {
+      elementsRight.push(
+        <div key={dish}>
+          <Dish name={dish} data={data.Dishes[dish]}/>
+        </div>
+      );
+    }
+    count++;
   }
 
   return (
     <div>
-      {elements}
+      <Column>
+      {elementsLeft}
+      </Column>
+      <Column>
+      {elementsRight}
+      </Column>
     </div>
   );
 

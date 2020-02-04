@@ -1,4 +1,5 @@
 import React from 'react';
+import Blurb from './styled/Blurb.jsx';
 
 var Specials = (props) => {
 
@@ -8,7 +9,7 @@ var Specials = (props) => {
     <div>
       <h3> Specials </h3>
       <hr />
-      {blurb}
+      <Blurb> {blurb} </Blurb>
     </div>
   );
 }
