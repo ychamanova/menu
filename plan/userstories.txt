@@ -1,0 +1,17 @@
+I expect the first menu page to render when the component loads.
+
+I expect a new menu page to render when a category is clicked.
+
+I expect the lower half of the menu to be hidden initially.
+
+I expect the menu to expand when "view full menu" is clicked.
+
+I expect the menu to shrink once more when "collapse menu" is clicked.
+
+I expect category borders to highlight when the category is clicked.
+
+I expect nothing to change when the current category is clicked.
+
+I expect food items to render in two adjacent columns.
+
+I expect specials to render beneath the menu.
