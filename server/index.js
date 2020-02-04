@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const db = require('../database');
+const path = require('path');
 
 const app = express();
 const PORT = 3000;
@@ -15,6 +16,10 @@ app.get('/api/menu/:pageId', (req, res) => {
   db.getMenuWithPageId(req.params.pageId, (data) => {
     res.send(data);
   });
+});
+
+app.get('/:pageId', (req, res) => {
+  res.sendFile(path.resolve(__dirname + '/../client/dist/index.html'));
 });
 
 app.listen(PORT, () => {
