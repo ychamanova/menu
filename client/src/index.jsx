@@ -12,6 +12,7 @@ class Menu extends React.Component {
     super(props);
     this.state = {
       data: data,
+      expand: false,
       currentPage: Object.keys(data.Categories)[0]
     };
   }
@@ -30,6 +31,13 @@ class Menu extends React.Component {
   changeCategory(str) {
     this.setState({
       currentPage: str
+    });
+  }
+
+  //TODO: refactor to single event handler
+  viewFullMenu() {
+    this.setState({
+      expand: !this.state.expand
     });
   }
 
@@ -53,7 +61,11 @@ class Menu extends React.Component {
               current={this.state.currentPage}
           />
 
-          <Page data={this.state.data.Categories[this.state.currentPage]}/>
+          <Page 
+              data={this.state.data.Categories[this.state.currentPage]}
+              expand={this.state.expand}
+              clickHandler={this.viewFullMenu.bind(this)}
+          />
           <hr />
         </div>
 
