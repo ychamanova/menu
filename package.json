@@ -7,7 +7,7 @@
     "test": "./node_modules/.bin/jest",
     "start": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
-    "seed-db": "mysql -u root -p && use menu && source ./schema.sql"
+    "seed-db": "mysql -u root && use menu && source ./schema.sql"
   },
   "author": "Joseph Sandmeyer",
   "license": "ISC",
@@ -49,6 +49,7 @@
     "@babel/polyfill": "^7.8.3",
     "body-parser": "^1.19.0",
     "bootstrap": "^3.3.7",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "jest": "^25.1.0",
     "jquery": "^3.4.1",
